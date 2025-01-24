@@ -14,16 +14,16 @@ import java.util.Optional;
 
 public interface TransectionRepository extends JpaRepository<TransectionDetails, Long> {
 
-//    default List<TransectionDetails> getStatement(List<TransectionDetails> allStatement, long acNo) {
-//        List<TransectionDetails> ans = new ArrayList<>();
-//
-//        for(TransectionDetails temp:allStatement){
-//            if(temp.getAccountDetails().getAcNo() == acNo){
-//                ans.add(temp);
-//            }
-//        }
-//        return ans;
-//    }
+    default List<TransectionDetails> getStatement(List<TransectionDetails> allStatement, long acNo) {
+        List<TransectionDetails> ans = new ArrayList<>();
+
+        for(TransectionDetails temp:allStatement){
+            if(temp.getAccountDetails().getAcNo() == acNo){
+                ans.add(temp);
+            }
+        }
+        return ans;
+    }
 
 
 //    @Query(nativeQuery = true, value = "SELECT * FROM transection_details  where account_details_ac_no =:acNo")
